@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-uimport random
+import random
 number = random.randint(-10000, 10000)
 if number < 0:
     new_num = -(abs(number) % 10)
