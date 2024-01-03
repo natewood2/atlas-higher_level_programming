@@ -8,9 +8,9 @@ if __name__ == "__main__":
     argument = "argument" if arg_c == 1 else "arguments"
 
     if arg_c == 0:
-        print("0 arguments.)
+        print("0 arguments.")
     else:
-        print("Number of {argument}: {arg_c}:".format(argument, arg_c))
+        print("Number of {}: {}:".format(argument, arg_c))
 
         for i in range(1, len(sys.argv)):
             print("{}: {}".format(i, sys.argv[i]))
