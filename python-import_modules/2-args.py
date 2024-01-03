@@ -10,7 +10,7 @@ if __name__ == "__main__":
     if arg_c == 0:
         print("0 arguments.")
     else:
-        print("Number of {}: {}".format(argument, arg_c))
+        print("{} {}:".format(arg_c, argument))
 
         for i in range(1, len(sys.argv)):
             print("{}: {}".format(i, sys.argv[i]))
