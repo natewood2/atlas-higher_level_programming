@@ -11,4 +11,4 @@ class Square:
             raise TypeError(error_)
         if size < 0:
             raise ValueError(_error)
-        self.__size = size        
+        self.__size = size
