@@ -1,41 +1,41 @@
-'This is a test for my add_integer function in Python'
+# This is a test for my add_integer function in Python
 
 >>> add_integer = __import__('0-add_integer').add_integer
 
-'positive values test'
+# positive values test
 >>> add_integer(1, 2)
 3
 
-'negative value test'
+# negative value test
 >>> add_integer(100, -2)
 98
 
-'one number value'
+# one number value
 >>> add_integer(2)
 100
 
-'handling float value'
+# handling float value
 >>> add_integer(2.3, -3)
 -1
 
-'floats are casted to ints prior to addition'
+# floats are casted to ints prior to addition
 >>> add_integer(3.9, 0.2)
-3
+4
 
-'detects when both arguments are not a float or int'
+# detects when both arguments are not a float or int
 >>> add_integer("awesome", 4)
 Traceback (most recent call last)
 ...
 TypeError: a must be an integer
 
-'detects when both arguments are not a float or int, in this case b'
+# detects when both arguments are not a float or int, in this case b
 >>> add_integer(6, "epic")
 Traceback (most recent call last)
 ...
 TypeError: b must be an integer
 
-'fails in both are non-int and non-floats
->>> add_int("nonfloat", "nonint")
+# fails in both are non-int and non-floats
+>>> add_integer("nonfloat", "nonint")
 Traceback (most recent call last)
 ...
 TypeError: a must be an integer
