@@ -20,7 +20,7 @@
 
 # floats are casted to ints prior to addition
 >>> add_integer(3.9, 0.2)
-4
+3
 
 # detects when both arguments are not a float or int
 >>> add_integer("awesome", 4)
