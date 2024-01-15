@@ -25,17 +25,17 @@
 # detects when both arguments are not a float or int
 >>> add_integer("awesome", 4)
 Traceback (most recent call last)
-...
+  ...
 TypeError: a must be an integer
 
 # detects when both arguments are not a float or int, in this case b
 >>> add_integer(6, "epic")
 Traceback (most recent call last)
-...
+  ...
 TypeError: b must be an integer
 
 # fails in both are non-int and non-floats
 >>> add_integer("nonfloat", "nonint")
 Traceback (most recent call last)
-...
+  ...
 TypeError: a must be an integer
