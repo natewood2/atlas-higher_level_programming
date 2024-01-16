@@ -14,6 +14,12 @@
 >>> matrix_divided([[5, 10, -15], [-5, 10, 20], [-20, 25, 30]], 5)
 [[1.0, 2.0, -3.0], [-1.0, 2.0, 4.0], [-4.0, 5.0, 6.0]]
 
+# Divide by Zero Test
+>>> matrix_divided([[1, 2, 3], [4, 5, 6], [7, 8, 9]], 0)
+Traceback (most recent call last)
+...
+ZeroDivisionError: division by zero
+
 # Matrix is a String
 >>> matrix_divided("Matrix", 8)
 Traceback (most recent call last)
