@@ -9,7 +9,7 @@ class Rectangle():
         """ Attributes for the rectangle """
         self.height = height
         self.width = width
-   
+
     @property
     def width(self):
         """ Makes __width private also the gettor """
