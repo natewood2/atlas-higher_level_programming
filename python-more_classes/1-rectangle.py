@@ -4,11 +4,6 @@
 
 class Rectangle():
     """ Defines the rectangle class """
-
-    width_error = "width must be an integer"
-    width_value_error = "width must be >= 0"
-    height_error = "height must be an integer"
-    height_value_error = "height must be >= 0"
     
     def __init__(self, width=0, height=0):
         """ Attributes for the rectangle """
@@ -26,9 +21,9 @@ class Rectangle():
             if value >= 0:
                 self.__width = value
             else:
-                raise ValueError(width_value_error)
+                raise ValueError("width must be >= 0")
         else:
-            raise TypeError(width_error)
+            raise TypeError("width must be an integer")
     
     @property
     def height(self):
@@ -41,6 +36,6 @@ class Rectangle():
             if value >= 0:
                 self.__height = value
             else:
-                raise ValueError(height_value_error)
+                raise ValueError("height must be >= 0")
         else:
-            raise TypeError(height_error)
+            raise TypeError("height must be an integer")
