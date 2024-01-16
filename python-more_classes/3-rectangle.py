@@ -61,4 +61,3 @@ class Rectangle():
             if i < self.height - 1:
                 rectangle += "\n"
         return rectangle
-            
