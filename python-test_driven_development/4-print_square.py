@@ -1,6 +1,9 @@
 #!/usr/bin/python3
-def print_square(size):
+""" Documenting module """
 
+
+def print_square(size):
+    """ Documention module """
     size_error = "size must be an integer"
     value_error = "size must be >= 0"
     float_and_zero_error = "size must be an integer"
