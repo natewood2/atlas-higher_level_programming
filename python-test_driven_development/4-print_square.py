@@ -11,5 +11,5 @@ def print_square(size):
         raise ValueError(value_error)
     if isinstance(size, float):
         raise TypeError(float_and_zero_error)
-    
+
     print(("#" * size + '\n') * size, end='')
