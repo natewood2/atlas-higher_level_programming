@@ -1,0 +1,22 @@
+'Test for 5-test_indentation'
+
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+# Basic Test for String
+>>> text_indentation("hello")
+hello
+
+# Test for Int
+>>> text_indentation(5)
+Traceback (most recent call last):
+...
+TypeError: text must be a string
+
+# Test for Blanklines
+>>> text_indentation("Hello,            World        Python.")
+Hello,
+<BLANKLINE>
+World
+<BLANKLINE>
+Python.
+<BLANKLINE>
