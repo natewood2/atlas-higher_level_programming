@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Defines a module """
 
+
 def text_indentation(text):
     """ Defines function """
     text_error = "text must be a string"
