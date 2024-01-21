@@ -4,6 +4,5 @@
 
 def lookup(obj):
     """ Defines a function """
-    empty_list = []
-    
+
     return(dir(obj))
