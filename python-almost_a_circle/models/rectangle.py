@@ -8,7 +8,7 @@ class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
         if width <= 0:
-            raise ValueError("width must be >= 0")
+            raise ValueError("width must be > 0")
         if not isinstance(width, int):
             raise TypeError("width must be an integer")
         self.__width = width
