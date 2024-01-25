@@ -101,4 +101,4 @@ class Rectangle(Base):
             rectangle += str(self.print_symbol) * self.width
             if i < self.height - 1:
                 rectangle += "\n"
-        return rectangle
+        print(rectangle)
