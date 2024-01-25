@@ -102,3 +102,7 @@ class Rectangle(Base):
             if i < self.height - 1:
                 rectangle += "\n"
         print(rectangle)
+
+    def __str__(self):
+        """Overriding"""
+        return "[Rectangle] ({}) {}/{} - {}/{}".format(id, self.x, self.y, self.width, self.height)
