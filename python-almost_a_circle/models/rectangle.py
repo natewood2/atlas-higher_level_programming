@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """Defines module for rect"""
-Base = __import__('base').Base
+from models.base import Base
 
 
 class Rectangle(Base):
