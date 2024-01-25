@@ -35,19 +35,19 @@ class Rectangle(Base):
         if value <= 0:
             raise ValueError("Value needs to be greater than 0")
         self.__height = value
-    
+
     @property
     def x(self):
         """Defines property"""
         return self.__x
-    
+
     @x.setter
     def x(self, value):
         """Defines x"""
         if value <= 0:
             raise ValueError("Value needs to be greater than 0")
         self.__x = value
-  
+
     @property
     def y(self):
         """Defines property"""
