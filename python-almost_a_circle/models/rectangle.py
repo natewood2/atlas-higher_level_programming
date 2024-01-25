@@ -5,6 +5,9 @@ from models.base import Base
 
 class Rectangle(Base):
     """Rect class that inherits from Base"""
+
+    print_symbol = '#'
+
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
         if not isinstance(width, int):
@@ -90,3 +93,12 @@ class Rectangle(Base):
     def area(self):
         """Defines the area"""
         return self.__width * self.__height
+
+    def display(self):
+        """Displays the #"""
+        rectangle = ""
+        for i in range(self.height):
+            rectangle += str(self.print_symbol) * self.width
+            if i < self.height - 1:
+                rectangle += "\n"
+        return rectangle
