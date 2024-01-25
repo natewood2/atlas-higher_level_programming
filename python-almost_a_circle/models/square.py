@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines a square"""
+"""Defines a square module"""
 from models.rectangle import Rectangle
 
 
@@ -10,4 +10,4 @@ class Square(Rectangle):
 
     def __str__(self):
         return "[Square] ({}) {}/{} - {}".format(
-            self.id, self.x, self.y, self.size)
+            self.id, self.x, self.y, self.width)
