@@ -7,25 +7,28 @@ class Rectangle(Base):
     """Rect class that inherits from Base"""
     def __init__(self, width, height, x=0, y=0, id=None):
         super().__init__(id)
-        if width <= 0:
-            raise ValueError("width must be > 0")
         if not isinstance(width, int):
             raise TypeError("width must be an integer")
+        if width <= 0:
+            raise ValueError("width must be > 0")
+
         self.__width = width
-        if height <= 0:
-            raise ValueError("height must be > 0")
         if not isinstance(height, int):
             raise TypeError("height must be an integer")
+        if height <= 0:
+            raise ValueError("height must be > 0")
         self.__height = height
-        if x <= 0:
-            raise ValueError("x must be >= 0")
+
         if not isinstance(x, int):
             raise TypeError("x must be an integer")
+        if x <= 0:
+            raise ValueError("x must be >= 0")
         self.__x = x
-        if y <= 0:
-            raise ValueError("y must be >= 0")
+
         if not isinstance(y, int):
             raise TypeError("y must be an integer")
+        if y <= 0:
+            raise ValueError("y must be >= 0")
         self.__y = y
 
     @property
@@ -39,22 +42,22 @@ class Rectangle(Base):
         return self.__height
 
     @width.setter
-    def width(self, value):
+    def width(self, width):
         """defines setter"""
-        if value <= 0:
+        if width <= 0:
             raise ValueError("width must be > 0")
-        if not isinstance(value, int):
+        if not isinstance(width, int):
             raise TypeError("width must be an integer")
-        self.__width = value
+        self.__width = width
 
     @height.setter
-    def height(self, value):
+    def height(self, height):
         """Defines setter"""
-        if value <= 0:
+        if height <= 0:
             raise ValueError("height must be > 0")
         if not isinstance(value, int):
             raise TypeError("height must be an integer")
-        self.__height = value
+        self.__height = height
 
     @property
     def x(self):
@@ -62,13 +65,13 @@ class Rectangle(Base):
         return self.__x
 
     @x.setter
-    def x(self, value):
+    def x(self, x):
         """Defines x"""
-        if value <= 0:
+        if x <= 0:
             raise ValueError("x must be >= 0")
-        if not isinstance(value, int):
+        if not isinstance(x, int):
             raise TypeError("x must be an integer")
-        self.__x = value
+        self.__x = x
 
     @property
     def y(self):
@@ -76,10 +79,10 @@ class Rectangle(Base):
         return self.__y
 
     @y.setter
-    def y(self, value):
+    def y(self, y):
         """Defines y setter"""
-        if value <= 0:
+        if y <= 0:
             raise ValueError("y must be >= 0")
-        if not isinstance(value, int):
+        if not isinstance(y, int):
             raise TypeError("x must be an integer")
-        self.__y = value
+        self.__y = y
