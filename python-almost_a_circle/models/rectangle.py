@@ -96,12 +96,10 @@ class Rectangle(Base):
 
     def display(self):
         """Displays the #"""
-        rectangle = ""
+        for i in range(self.y):
+            print()
         for i in range(self.height):
-            rectangle += str(self.print_symbol) * self.width
-            if i < self.height - 1:
-                rectangle += "\n"
-        print(rectangle)
+            print(" " * self.x + str(self.print_symbol) * self.width)
 
     def __str__(self):
         """Overriding"""
