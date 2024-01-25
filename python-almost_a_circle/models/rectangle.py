@@ -1,12 +1,12 @@
 #!/usr/bin/python3
 """Defines module for rect"""
-from base import Base
+Base = __import__('base').Base
 
 
 class Rectangle(Base):
     """Rect class that inherits from Base"""
     def __init__(self, width, height, x=0, y=0, id=None):
-        super().__init__(self, id=None)
+        super().__init__(id)
         self.__width = width
         self.__height = height
         self.__x = x
