@@ -39,3 +39,13 @@ class Base:
             return []
         else:
             return json.loads(json_string)
+
+    @classmethod
+    def create(cls, **dictionary):
+        """I love the owala waterbottle"""
+        if cls.__name__ == "Rectangle":
+            dummy = cls(10, 10)
+        else:
+            dummy = cls(10)
+        dummy.update(**dictionary)
+        return dummy
