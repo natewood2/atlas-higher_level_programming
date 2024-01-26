@@ -36,5 +36,6 @@ class Base:
     def from_json_string(json_string):
         """From a string"""
         if json_string is None or not json_string:
-            return "[]"
-        return json.loads(json_string)
+            return []
+        else:
+            return json.loads(json_string)
