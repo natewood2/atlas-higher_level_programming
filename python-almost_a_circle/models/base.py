@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """Defines a modules"""
 import json
+import os
 
 
 class Base:
@@ -49,3 +50,14 @@ class Base:
             dummy = cls(10)
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        """Loads from a file"""
+        filename = "{}.json".format(cls.__name__)
+        if not os.path.exists(filename):
+            return []
+        with open(filename, "r") as file:
+            json_string = file.read()
+        list_dicts = cls.from_json_string(json_string)
+        return [cls.create(**d) for d in list_dicts]
