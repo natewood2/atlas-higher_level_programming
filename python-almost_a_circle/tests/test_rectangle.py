@@ -4,6 +4,7 @@ import io
 import sys
 from models.rectangle import Rectangle
 from models.base import Base
+from io import StringIO
 """ Unit Test for Rectangle. """
 
 class TestRectangle(unittest.TestCase):
@@ -85,6 +86,29 @@ class TestRectangle(unittest.TestCase):
         r = Rectangle(10, 2, 1, 9, 3)
         self.assertEqual(r.to_dictionary(), {
             'id': 3, 'width': 10, 'height': 2, 'x': 1, 'y': 9})
+
+    def test_zero_width(self):
+        """ Test creation of Rectangle with a width of 0. """
+        with self.assertRaises(ValueError):
+            Rectangle(0, 2)
+
+    def test_zero_height(self):
+        """ Test creation of Rectangle with a width of 0. """
+        with self.assertRaises(ValueError):
+            Rectangle(1, 0)
+
+    def test_display_xy(self):
+        """ Test the display method for a rectangle without x and y offset. """
+        capturedOutput = StringIO()
+        sys.stdout = capturedOutput
+
+        rect = Rectangle(4, 3)
+        rect.display()
+
+        sys.stdout = sys.__stdout__
+        expected_output = "####\n" * 3
+
+        self.assertEqual(capturedOutput.getvalue(), expected_output)
 
 if __name__ == '__main__':
     unittest.main()
