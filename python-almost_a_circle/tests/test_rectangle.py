@@ -124,5 +124,18 @@ class TestRectangle(unittest.TestCase):
 
         os.remove(filename)
 
+    def test_save_to_file_save(self):
+        """ Test Rectangle.save_to_file with None. """
+        Rectangle.save_to_file([])
+        filename = "Rectangle.json"
+
+        self.assertTrue(os.path.isfile(filename))
+
+        with open(filename, "r") as file:
+            contents = file.read()
+            self.assertEqual(contents, "[]")
+
+        os.remove(filename)
+
 if __name__ == '__main__':
     unittest.main()
