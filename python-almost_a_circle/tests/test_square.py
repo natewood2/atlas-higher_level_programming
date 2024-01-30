@@ -3,6 +3,7 @@ import unittest
 import io
 import sys
 import os
+import json
 from models.square import Square
 from models.base import Base
 """ Unit test for Square Class. """
@@ -162,6 +163,40 @@ class TestSquare(unittest.TestCase):
         square = Square.create(id=89)
 
         self.assertEqual(square.id, 89)
+
+    def test_save_to_file_save_2(self):
+        """ Test Rectangle.save_to_file with None. """
+        Square.save_to_file([Square(1)])
+        filename = "Square.json"
+
+        self.assertTrue(os.path.isfile(filename))
+
+        with open(filename, "r") as file:
+            contents = json.loads(file.read())
+            self.assertEqual(len(contents), 1)
+            self.assertEqual(contents[0]['size'], 1)
+
+        os.remove(filename)
+
+    def test_load_from_file_no_file(self):
+        """ Testing when file doesn't exist. """
+        if os.path.exists("Square.json"):
+            os.remove("Square.json")
+
+        result = Square.load_from_file()
+        self.assertEqual(result, [])
+
+    def test_load_from_file_when_it_does_exist(self):
+        """ Testing when file exists. """
+        Square.save_to_file([Square(1)])
+        result = Square.load_from_file()
+
+        self.assertIsInstance(result, list)
+        self.assertEqual(len(result), 1)
+        self.assertIsInstance(result[0], Square)
+        self.assertEqual(result[0].size, 1)
+
+        os.remove("Square.json")
 
 if __name__ == '__main__':
     unittest.main()
