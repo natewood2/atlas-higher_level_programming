@@ -4,12 +4,10 @@ import io
 import sys
 from models.rectangle import Rectangle
 from models.base import Base
-
+""" Unit Test for Rectangle. """
 
 class TestRectangle(unittest.TestCase):
-    """
-    Unit tests for the Rectangle class.
-    """
+    """ Unit tests for the Rectangle class. """
     def test_initialization(self):
         """ Tests proper initialization of rectangle dimensions. """
         r1 = Rectangle(3, 2)
@@ -21,6 +19,9 @@ class TestRectangle(unittest.TestCase):
         """ Tests response to invalid width input. """
         with self.assertRaises(ValueError):
             Rectangle(-1, 2)
+
+        base_class = Base()
+        self.assertEqual(base_class.id, 1)
 
     def test_area(self):
         """ Tests area calculation. """
