@@ -120,5 +120,10 @@ class TestSquare(unittest.TestCase):
         with self.assertRaises(ValueError):
             Square(1, 2, -3)
 
+    def test_square_with_zero(self):
+        """ Testing square with zero. """
+        with self.assertRaises(ValueError):
+            Square(0)
+
 if __name__ == '__main__':
     unittest.main()
