@@ -2,6 +2,7 @@
 import unittest
 import io
 import sys
+import os
 from models.square import Square
 from models.base import Base
 """ Unit test for Square Class. """
@@ -124,6 +125,37 @@ class TestSquare(unittest.TestCase):
         """ Testing square with zero. """
         with self.assertRaises(ValueError):
             Square(0)
+
+    def test_save_to_file_(self):
+        """ Test Rectangle.save_to_file with None. """
+        Square.save_to_file(None)
+        filename = "Square.json"
+
+        self.assertTrue(os.path.isfile(filename))
+
+        with open(filename, "r") as file:
+            contents = file.read()
+            self.assertEqual(contents, "[]")
+
+        os.remove(filename)
+
+    def test_save_to_file_save(self):
+        """ Test Rectangle.save_to_file with None. """
+        Square.save_to_file([])
+        filename = "Square.json"
+
+        self.assertTrue(os.path.isfile(filename))
+
+        with open(filename, "r") as file:
+            contents = file.read()
+            self.assertEqual(contents, "[]")
+
+        os.remove(filename)
+
+    def test_to_dictionary(self):
+        r = Square(2, 1, 9, 3)
+        self.assertEqual(r.to_dictionary(), {
+            'id': 3, 'size': 2, 'x': 1, 'y': 9})
 
 if __name__ == '__main__':
     unittest.main()
