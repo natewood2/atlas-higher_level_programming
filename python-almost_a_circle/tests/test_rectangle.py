@@ -20,8 +20,10 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             Rectangle(-1, 2)
 
-        base_class = Base()
-        self.assertEqual(base_class.id, 1)
+    def test_invalid_y_type(self):
+        """ Test creation of Rectangle with invalid y type. """
+        with self.assertRaises(TypeError):
+            Rectangle(1, 2, 3, "4")
 
     def test_area(self):
         """ Tests area calculation. """
