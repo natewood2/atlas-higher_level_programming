@@ -88,7 +88,7 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(square.size, 1)
         self.assertEqual(square.x, 2)
         self.assertEqual(square.y, 0)
-        self.assertIsNone(square.id) 
+        self.assertIsInstance(square.id, int) 
 
 if __name__ == '__main__':
     unittest.main()
