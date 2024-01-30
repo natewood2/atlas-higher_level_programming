@@ -82,5 +82,13 @@ class TestSquare(unittest.TestCase):
         expected_dict = {'id': 10, 'size': 5, 'x': 2, 'y': 3}
         self.assertEqual(square_dict, expected_dict)
 
+    def test_square_1_and_2(self):
+        """ Test creation of Square with size 1 and x 2. """
+        square = Square(1, 2)
+        self.assertEqual(square.size, 1)
+        self.assertEqual(square.x, 2)
+        self.assertEqual(square.y, 0)
+        self.assertIsNone(square.id) 
+
 if __name__ == '__main__':
     unittest.main()
