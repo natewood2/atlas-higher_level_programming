@@ -157,5 +157,11 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(r.to_dictionary(), {
             'id': 3, 'size': 2, 'x': 1, 'y': 9})
 
+    def testing_id(self):
+        """ Testing id. """
+        square = Square.create(id=89)
+
+        self.assertEqual(square.id, 89)
+
 if __name__ == '__main__':
     unittest.main()
