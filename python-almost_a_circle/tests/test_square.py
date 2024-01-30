@@ -88,7 +88,37 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(square.size, 1)
         self.assertEqual(square.x, 2)
         self.assertEqual(square.y, 0)
-        self.assertIsInstance(square.id, int) 
+        self.assertIsInstance(square.id, int)
+
+    def test_invalid_x(self):
+        """ Testing a invalid x parameter. """
+        with self.assertRaises(TypeError):
+            Square(1, "2")
+
+    def test_invalid_y(self):
+        """ Testing invalid y parameter. """
+        with self.assertRaises(TypeError):
+            Square("1", 2)
+
+    def test_invalid_with_three(self):
+        """ Testing a invalid x parameter. """
+        with self.assertRaises(TypeError):
+            Square(1, 2, "3")
+
+    def test_negative_x(self):
+        """ Testing negative x parameter. """
+        with self.assertRaises(ValueError):
+            Square(2, -1)
+
+    def test_negative_y(self):
+        """ Testing negative y parameter. """
+        with self.assertRaises(ValueError):
+            Square(-1, 2)
+
+    def test_negative_with_three(self):
+        """ Testing negative y parameter. """
+        with self.assertRaises(ValueError):
+            Square(1, 2, -3)
 
 if __name__ == '__main__':
     unittest.main()
