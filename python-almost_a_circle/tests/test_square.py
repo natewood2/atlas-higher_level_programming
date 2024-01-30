@@ -30,6 +30,11 @@ class TestSquare(unittest.TestCase):
         square = Square(3)
         self.assertEqual(square.area(), 9)
 
+    def test_with_two(self):
+        """ Testing with two. """
+        square = Square(3, 4)
+        self.assertEqual(square.area(), 12)
+
     def test_str(self):
         """ Tests string representation of the Square class. """
         square = Square(4, 2, 1, 12)
