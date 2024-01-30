@@ -2,6 +2,7 @@
 import unittest
 import io
 import sys
+import os
 from models.rectangle import Rectangle
 from models.base import Base
 from io import StringIO
@@ -109,6 +110,19 @@ class TestRectangle(unittest.TestCase):
         expected_output = "####\n" * 3
 
         self.assertEqual(capturedOutput.getvalue(), expected_output)
+
+    def test_save_to_file_(self):
+        """ Test Rectangle.save_to_file with None. """
+        Rectangle.save_to_file(None)
+        filename = "Rectangle.json"
+
+        self.assertTrue(os.path.isfile(filename))
+
+        with open(filename, "r") as file:
+            contents = file.read()
+            self.assertEqual(contents, "[]")
+
+        os.remove(filename)
 
 if __name__ == '__main__':
     unittest.main()
