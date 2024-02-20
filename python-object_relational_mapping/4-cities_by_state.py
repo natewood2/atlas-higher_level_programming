@@ -18,7 +18,7 @@ def list_cities(usr, pw, db_name):
 
     cur = db.cursor()
     cur.execute("SELECT cities.id, cities.name, states.name\
-                FROM citiesJOIN states ON cities.state_id = states.id")
+                FROM cities JOIN states ON cities.state_id = states.id")
     rows = cur.fetchall()
     for row in rows:
         print(row)
