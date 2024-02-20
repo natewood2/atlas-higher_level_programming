@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """ Script that displays all values in the states table where name matches the argument. """
 
-
 import MySQLdb
 import sys
 
@@ -16,11 +15,12 @@ def sql_connect(usr, pw, db_name, state_name):
                          port=3306)
 
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name = '{}' ORDER BY id ASC;".format(state_name))
+    cur.execute("SELECT * FROM {0} ORDER BY {0}.id ASC;".format(state_name))
 
     rows = cur.fetchall()
     for row in rows:
-        print(row)
+        if row[1] == state_name:
+            print(row)
 
     cur.close()
     db.close()
