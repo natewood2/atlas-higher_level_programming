@@ -17,8 +17,8 @@ def list_cities(usr, pw, db_name):
                          port=3306)
 
     cur = db.cursor()
-    cur.execute("SELECT * FROM cities ORDER BY id ASC")
-
+    cur.execute("SELECT cities.id, cities.name, states.name\
+                FROM citiesJOIN states ON cities.state_id = states.id")
     rows = cur.fetchall()
     for row in rows:
         print(row)
@@ -28,5 +28,4 @@ def list_cities(usr, pw, db_name):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) == 4:
-        list_cities(sys.argv[1], sys.argv[2], sys.argv[3])
+    list_cities(sys.argv[1], sys.argv[2], sys.argv[3])
