@@ -4,8 +4,10 @@
 import MySQLdb
 import sys
 
+
 def sql_connect(usr, pw, db_name):
     """Connect to a MySQL database and print all states."""
+
     db = MySQLdb.connect(host="localhost",
                          user=usr,
                          passwd=pw,
@@ -13,7 +15,7 @@ def sql_connect(usr, pw, db_name):
                          port=3306)
 
     cur = db.cursor()
-    cur.execute("SELECT * FROM states ORDER BY id ASC;")
+    cur.execute("SELECT * FROM states;")
 
     rows = cur.fetchall()
     for row in rows:
