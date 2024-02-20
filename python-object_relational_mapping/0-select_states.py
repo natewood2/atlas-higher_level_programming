@@ -24,5 +24,6 @@ def sql_connect(usr, pw, db_name):
     cur.close()
     db.close()
 
+
 if __name__ == "__main__":
     sql_connect(sys.argv[1], sys.argv[2], sys.argv[3])
