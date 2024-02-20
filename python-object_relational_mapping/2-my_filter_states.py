@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-""" 
-Script that displays all values in the states 
+"""
+Script that displays all values in the states
 table where name matches the argument.
 """
 
@@ -9,9 +9,9 @@ import sys
 
 
 def sql_connect(usr, pw, db_name, state_name):
-    """ 
-    Connect to a MySQL database and display 
-    all states matching a specific name. 
+    """
+    Connect to a MySQL database and display
+    all states matching a specific name.
     """
 
     db = MySQLdb.connect(host="localhost",
