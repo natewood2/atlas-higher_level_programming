@@ -15,8 +15,8 @@ def sql_connect(usr, pw, db_name, state_name):
                          port=3306)
 
     cur = db.cursor()
-    query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC;"
-    cur.execute(query, (state_name,))
+    query = "SELECT * FROM states WHERE name = '{}' ORDER BY id ASC;".format(state_name)
+    cur.execute(query)
 
     rows = cur.fetchall()
     for row in rows:
@@ -28,5 +28,4 @@ def sql_connect(usr, pw, db_name, state_name):
 
 
 if __name__ == "__main__":
-    if len(sys.argv) == 5:
-        sql_connect(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
+    sql_connect(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
