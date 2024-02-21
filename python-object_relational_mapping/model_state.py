@@ -10,6 +10,7 @@ from sqlalchemy.orm import sessionmaker
 
 Base = declarative_base()
 
+
 class State(Base):
     """ State Class. """
     __tablename__ = 'states'
