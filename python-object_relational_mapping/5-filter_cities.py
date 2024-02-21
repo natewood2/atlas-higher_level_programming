@@ -32,6 +32,8 @@ def list_cities_of_state(usr, pw, db_name, state_name):
     cur.close()
     db.close()
 
+
 if __name__ == "__main__":
     if len(sys.argv) == 5:
-        list_cities_of_state(sys.argv[1], sys.argv[2], sys.argv[3], sys.argv[4])
+        list_cities_of_state(sys.argv[1], sys.argv[2],\
+            sys.argv[3], sys.argv[4])
