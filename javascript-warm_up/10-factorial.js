@@ -8,6 +8,6 @@ function factorial (f) {
     return f * factorial(f - 1);
   }
 }
-const result = factorial(numberEnter)
+const result = factorial(numberEnter);
 
-console.log(result)
+console.log(result);
