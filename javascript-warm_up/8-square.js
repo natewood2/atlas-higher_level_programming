@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const numberEnter = parseInt(process.argv[2]);
 
-const square = '#'
+const square = 'X'
 if (!numberEnter) {
   console.log('Missing size')
 } else {
