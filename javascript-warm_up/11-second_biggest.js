@@ -1,6 +1,8 @@
-#!/usr/bin/node
+#!/usr/bin/env node
 const numberEnter = process.argv.slice(2).map(Number);
 if (numberEnter.length === 1) {
+  console.log('0');
+} else if (numberEnter.length === 0) {
   console.log('0');
 } else if (numberEnter.length > 1) {
   numberEnter.sort((a, b) => a - b);
