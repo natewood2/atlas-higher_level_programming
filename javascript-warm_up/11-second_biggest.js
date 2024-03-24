@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 const numberEnter = process.argv.slice(2).map(Number);
 if (numberEnter.length === 1) {
   console.log('0');
