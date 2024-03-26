@@ -6,7 +6,7 @@ class Rectangle {
       this.height = h;
     }
   }
-  
+
   print () {
     if (this.width && this.height) {
       for (let i = 0; i < this.height; i++) {
@@ -18,10 +18,10 @@ class Rectangle {
     [this.width, this.height] = [this.height, this.width];
   }
 
-  double() {
+  double () {
     this.width *= 2;
     this.height *= 2;
   }
 }
-  
+
 module.exports = Rectangle;
