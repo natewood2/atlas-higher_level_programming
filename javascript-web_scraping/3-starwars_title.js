@@ -8,6 +8,7 @@ if (!movieTitle) {
   process.exit(1);
 }
 
-request(api, { json: true }, (error, response, body) => {
+request(api, { json: true }, (err, response, body) => {
+  if (err) throw err;
   console.log(body.title);
 });
