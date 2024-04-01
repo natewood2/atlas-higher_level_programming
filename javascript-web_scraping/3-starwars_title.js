@@ -4,7 +4,7 @@ const movieTitlee = process.argv[2];
 const api = `https://swapi-api.hbtn.io/api/films/${movieTitlee}`;
 
 if (!movieTitlee) {
-  console.log("Please enter movie ID.");
+  console.log('Please enter movie ID.');
   process.exit(1);
 }
 
