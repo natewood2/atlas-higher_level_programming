@@ -1,4 +1,4 @@
-#!/usr/bin/env node
+#!/usr/bin/node
 const request = require('request');
 const movieTitle = process.argv[2];
 const api = `https://swapi-api.hbtn.io/api/films/${movieTitle}`;
